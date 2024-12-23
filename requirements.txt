@@ -3,8 +3,8 @@ anyio==4.7.0
 blinker==1.9.0
 certifi==2024.8.30
 click==8.1.7
-contourpy @ file:///Users/cbousseau/work/recipes/ci_py311/contourpy_1677925208456/work
-cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
+contourpy==1.0.7
+cycler==0.11.0
 distro==1.9.0
 Flask==3.1.0
 Flask-Cors==5.0.0
@@ -16,21 +16,22 @@ idna==3.10
 itsdangerous==2.2.0
 Jinja2==3.1.4
 jiter==0.8.2
-kiwisolver @ file:///Users/cbousseau/work/recipes/ci_py311/kiwisolver_1677925326358/work
+kiwisolver==1.4.4
 MarkupSafe==3.0.2
-matplotlib @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_05rfi32zzb/croot/matplotlib-suite_1679593473526/work
+matplotlib==3.7.1
 munkres==1.1.4
-numpy @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a19y8c22jc/croot/numpy_and_numpy_base_1691091616945/work
+numpy==1.24.2
 openai==1.57.4
-packaging @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_e946luvhc3/croot/packaging_1678965323926/work
+packaging==21.3
 Pillow==9.4.0
 pydantic==2.10.3
 pydantic_core==2.27.1
-pyparsing @ file:///Users/cbousseau/work/recipes/ci_py311/pyparsing_1677910832141/work
-python-dateutil @ file:///tmp/build/80754af9/python-dateutil_1626374649649/work
-six @ file:///tmp/build/80754af9/six_1644875935023/work
+pyparsing==3.0.9
+python-dateutil==2.8.2
+python-dotenv==1.0.1
+six==1.16.0
 sniffio==1.3.1
-tornado @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_28d93aezp2/croot/tornado_1690848278715/work
+tornado==6.3.1
 tqdm==4.67.1
 typing_extensions==4.12.2
 Werkzeug==3.1.3

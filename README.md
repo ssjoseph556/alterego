@@ -1,7 +1,7 @@
-# Alter Egos
+# Alter Ego
 
 ## Overview
-**Alter Egos** is an AI-powered chatbot platform that allows users to create and interact with highly personalized digital personas. With extensive customization options, you can shape your chatbot’s identity, personality, and communication style to create your perfect virtual companion.
+**Alter ego** is an AI-powered chatbot platform that allows users to create and interact with highly personalized digital personas. With extensive customization options, you can shape your chatbot’s identity, personality, and communication style to create your perfect virtual companion.
 
 www.google.com
 
@@ -26,4 +26,4 @@ www.google.com
 ### Setup Instructions
 1. **Clone the Repository**:
    ```bash
-   git clone https://github.com/your-username/alter-egos.git
+   git clone https://github.com/ssjoseph556/alterego.git
