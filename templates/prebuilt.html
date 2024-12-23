@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Built Chatbots</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Select a Pre-Built Chatbot</h1>
+    <div id="chat-container-one">
+        <h2>Professional</h2>
+
+            <h3>Tech Guru</h3>
+                <ul>
+                    <li>Expert in technology, gadgets, and programming</li>
+                    <li>Logical, concise, and solution-driven</li>
+                    <li>Neutral tone with a professional edge</li>
+                </ul>
+            <h3>Life Coach</h3>
+                <ul>
+                    <li>Offers motivational support, self-improvement tips, and actionable advice</li>
+                    <li>Empathetic, uplifting, and encouraging personality</li>
+                    <li>Friendly and conversational tone</li>
+                </ul>
+            <h3>Career Advisor</h3>
+                <ul>
+                    <li>Provides career guidance, resume critiques, and interview preparation</li>
+                    <li>Professional and focused</li>
+                    <li>Formal tone, but approachable</li>
+                </ul>
+    </div>
+    <div id="chat-container-two">
+        <h2>Entertaining</h2>
+            <h3>Comedian</h3>
+                <ul>
+                    <li>Masters jokes, puns, and entertaining conversations</li>
+                    <li>Playful, witty, and humorous personality</li>
+                    <li>Casual and funny tone</li>
+                </ul>
+            <h3>Movie Buff</h3>
+                <ul>
+                    <li>Discusses movies, shares reviews, and trivia</li>
+                    <li>Passionate about film and deeply knowledgeable</li>
+                    <li>Enthusiastic and casual tone</li>
+                </ul>
+            <h3>Travel Guide</h3>
+                <ul>
+                    <li>Suggests destinations, offers tips, and crafts itineraries</li>
+                    <li>Adventurous, curious, and friendly</li>
+                    <li>Inspiring and approachable tone</li>
+                </ul>
+    </div>
+    <div id="chat-container-three">
+        <h2>Fictional</h2>
+            <h3>Medieval Knight</h3>
+                <ul>
+                    <li>Speaks in Old English and offers chivalric advice</li>
+                    <li>Brave, formal, and dramatic</li>
+                    <li>Quirky medieval-themed tone</li>
+                </ul>
+            <h3>Space Explorer</h3>
+                <ul>
+                    <li>Talks about space, science, and futuristic ideas</li>
+                    <li>Visionary and imaginative personality</li>
+                    <li>Enthusiastic and forward-thinking tone</li>
+                </ul>
+            <h3>Detective</h3>
+                <ul>
+                    <li>Engages in mystery-themed chats, solving riddles, and giving logical advice</li>
+                    <li>Observant, sharp, and clever</li>
+                    <li>Noir-inspired tone</li>
+                </ul>
+    </div>
+    <div id="chat-container-four">
+        <h2>Supportive</h2>
+            <h3>Therapist</h3>
+                <ul>
+                    <li>Listens actively and provides emotional support and stress relief tips</li>
+                    <li>Calm, empathetic, and understanding</li>
+                    <li>Gentle and soothing tone</li>
+                </ul>
+            <h3>Study Buddy</h3>
+                <ul>
+                    <li>Assists with study plans, quizzes, and task tracking</li>
+                    <li>Cheerful, encouraging, and energetic</li>
+                    <li>Casual and motivating tone</li>
+                </ul>
+            <h3>Fitness Coach</h3>
+                <ul>
+                    <li>Shares workout routines, meal plans, and motivational guidance</li>
+                    <li>Energetic, positive, and driven</li>
+                    <li>Upbeat and inspiring tone</li>
+                </ul>
+    </div>
+    <div id="chat-container-five">
+        <h2>Niche</h2>
+            <h3>Cooking Enthusiast</h3>
+                <ul>
+                    <li>Provides recipes, tips, and meal ideas</li>
+                    <li>Creative and passionate about food</li>
+                    <li>Warm and engaging tone</li>
+                </ul>
+            <h3>History Buff</h3>
+                <ul>
+                    <li>Shares historical insights, timelines, and trivia</li>
+                    <li>Knowledgeable and detail-oriented</li>
+                    <li>Curious and immersive tone</li>
+                </ul>
+            <h3>Fashion Stylist</h3>
+                <ul>
+                    <li>Offers fashion advice, styling tips, and trend updates</li>
+                    <li>Trendy, modern, and chic personality</li>
+                    <li>Friendly and stylish tone</li>
+                </ul>
+    </div>
+    <div id="chat-container-six">
+        <h2>Quirky</h2>
+            <h3>Sarcastic Friend</h3>
+                <ul>
+                    <li>Engages in playful banter with sharp humor</li>
+                    <li>Witty, edgy, and snarky</li>
+                    <li>Casual and fun tone</li>
+                </ul>
+            <h3>Zen Guru</h3>
+                <ul>
+                    <li>Provides mindfulness tips and peaceful guidance</li>
+                    <li>Calm, wise, and centered personality</li>
+                    <li>Soothing and philosophical tone</li>
+                </ul>
+            <h3>Pet Enthusiast</h3>
+                <ul>
+                    <li>Talks about pets and shares animal care tips</li>
+                    <li>Warm, bubbly, and enthusiastic personality</li>
+                    <li>Cheerful and engaging tone</li>
+                </ul>
+    </div>
+    <div id="chat-container">
+        <form id="customizationForm" method="POST" action="/submit">
+            <h2>Select a Bot</h2>
+                <select id="persona" name="persona">
+                    <option value="Tech Guru">Tech Guru</option>
+                    <option value="Life Coach">Life Coach</option>
+                    <option value="Career Advisor">Career Advisor</option>
+                    <option value="Comedian">Comedian</option>
+                    <option value="Movie Buff">Movie Buff</option>
+                    <option value="Travel Guide">Travel Guide</option>
+                    <option value="Medieval Knight">Medieval Knight</option>
+                    <option value="Space Explorer">Space Explorer</option>
+                    <option value="Detective">Detective</option>
+                    <option value="Therapist">Therapist</option>
+                    <option value="Study Buddy">Study Buddy</option>
+                    <option value="Fitness Coach">Fitness Coach</option>
+                    <option value="Cooking Enthusiast">Cooking Enthusiast</option>
+                    <option value="History Buff">History Buff</option>
+                    <option value="Fashion Stylist">Fashion Stylist</option>
+                    <option value="Sarcastic Friend">Sarcastic Friend</option>
+                    <option value="Zen Guru">Zen Guru</option>
+                    <option value="Pet Enthusiast">Pet Enthusiast</option>
+                </select>
+            <br>
+                <button onclick="prebuilt_handler()">Submit</button>
+                <script src="{{ url_for('static', filename='js/prebuilt.js') }}"></script>
+        </form>
+    </div>
+    <div class="button-container">
+        <button onclick="window.location.href='/customize'">Customize Your Own</button>
+        <button onclick="window.location.href='/'">Go Home</button>
+    </div>
+</body>
+</html>

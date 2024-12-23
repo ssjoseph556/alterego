@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Customize Your Chatbot</h1>
+    <div id="chat-container">
+        <!-- Identity Settings -->
+            <h2>Identity</h2>
+            <!-- Name -->
+                <label for="name">Name:</label>
+                <input type="text" id="name" placeholder="Enter a name for the bot" maxlength="40"><br>
+            <!-- Age -->
+                <label for="age">Age:</label>
+                <input type="number" id="age" step="1" placeholder="Enter an age for the bot" oninput="checkAgeInput()"><br>
+                <script>
+                function checkAgeInput(){
+                    const inputField = document.getElementById('age');
+                    inputField.addEventListener('input', function() {
+                        inputField.value = inputField.value.replace(/[^0-9-]/g, '');
+                        if(inputField.value > 999){
+                            inputField.value = 999
+                        }
+                        if(inputField.value < 0){
+                            inputField.value = 0
+                        }
+                    });
+                }
+                </script>
+            <!-- Gender -->
+                <label>Gender:</label><br>
+                <input type="radio" name="gender" value="male"> Male<br>
+                <input type="radio" name="gender" value="female"> Female<br>
+                <input type="radio" name="gender" value="none"> None<br>
+            <!-- Background Story -->
+                <label for="background story">Background Story:</label><br>
+                <textarea id="background story" placeholder="Write a background story for the bot" maxlength="200"></textarea><br>
+            <!-- Purpose -->
+                <label for="purpose">Purpose:</label><br>
+                <textarea id="purpose" placeholder="Explain the purpose for the bot" maxlength="100"></textarea><br>
+        <!-- Personality Settings -->
+            <h2>Personality</h2>
+            <!-- Mood -->
+                <label>Mood:</label><br>
+                <input type="radio" name="mood" value="happy"> Happy<br>
+                <input type="radio" name="mood" value="sad"> Sad<br>
+                <input type="radio" name="mood" value="angry"> Angry<br>
+                <input type="radio" name="mood" value="nervous"> Nervous<br>
+                <input type="radio" name="mood" value="calm"> Calm<br>
+                <input type="radio" name="mood" value="neutral"> Neutral<br>
+            <!-- Mood Variability -->
+                <label for="mood variability">Mood Variability:</label><br>
+                <input type="range" id="mood variability" min="1" max="10" value="0" oninput="updateMoodVal()">
+                <span id="mood val">(1-10)</span><br>
+                <script>
+                function updateMoodVal() {
+                    const slider = document.getElementById("mood variability");
+                    const moodVal = document.getElementById("mood val");
+                    slider.addEventListener("input", function() {
+                        moodVal.textContent = slider.value;
+                    });
+                }
+                </script>
+            <!-- Imagination -->
+                <label for="imagination">Imagination:</label><br>
+                <input type="range" id="imagination" min="1" max="10" value="0" oninput="updateImaginationVal()">
+                <span id="imagination val">(1-10)</span><br>
+                <script>
+                function updateImaginationVal() {
+                    const slider = document.getElementById("imagination");
+                    const imaginationVal = document.getElementById("imagination val");
+                    slider.addEventListener("input", function() {
+                        imaginationVal.textContent = slider.value;
+                    });
+                }
+                </script>
+            <!-- Humor -->
+                <label>Humor:</label><br>
+                <input type="radio" name="humor" value="dry"> Dry<br>
+                <input type="radio" name="humor" value="witty"> Witty<br>
+                <input type="radio" name="humor" value="dad"> Dad<br>
+                <input type="radio" name="humor" value="playful"> Playful<br>
+                <input type="radio" name="humor" value="dark"> Dark<br>
+                <input type="radio" name="humor" value="sarcastic"> Sarcastic<br>
+                <input type="radio" name="humor" value="none"> None<br>
+            <!-- Energy -->
+                <label for="energy">Energy:</label><br>
+                <input type="range" id="energy" min="1" max="10" value="0" oninput="updateEnergyVal()">
+                <span id="energy val">(1-10)</span><br>
+                <script>
+                function updateEnergyVal() {
+                    const slider = document.getElementById("energy");
+                    const energyVal = document.getElementById("energy val");
+                    slider.addEventListener("input", function() {
+                        energyVal.textContent = slider.value;
+                    });
+                }
+                </script>
+            <!-- Empathy -->
+                <label for="empathy">Empathy:</label><br>
+                <input type="range" id="empathy" min="1" max="10" value="0" oninput="updateEmpathyVal()">
+                <span id="empathy val">(1-10)</span><br>
+                <script>
+                function updateEmpathyVal() {
+                    const slider = document.getElementById("empathy");
+                    const empathyVal = document.getElementById("empathy val");
+                    slider.addEventListener("input", function() {
+                        empathyVal.textContent = slider.value;
+                    });
+                }
+                </script>
+        <!-- Communication Settings -->
+            <h2>Communication</h2>
+            <!-- Tone -->
+                <label>Tone:</label><br>
+                <input type="radio" name="tone" value="formal"> Formal<br>
+                <input type="radio" name="tone" value="casual"> Casual<br>
+            <!-- Sensitive Topics -->
+                <label>Allow Sensitive Topics:</label><br>
+                <input type="radio" name="sensitive topics" value="yes"> Yes<br>
+                <input type="radio" name="sensitive topics" value="no"> No<br>
+            <!-- Profanity -->
+                <label>Allow Profanity:</label><br>
+                <input type="radio" name="profanity" value="yes"> Yes<br>
+                <input type="radio" name="profanity" value="no"> No<br>
+                <input type="radio" name="profanity" value="mild"> Mild<br>
+            <!-- Response Length -->
+                <label>Response Length:</label><br>
+                <input type="radio" name="response length" value="average"> Average<br>
+                <input type="radio" name="response length" value="long"> Long<br>
+                <input type="radio" name="response length" value="short"> Short<br>
+                <input type="radio" name="response length" value="dynamic"> Dynamic<br>
+            <!-- Sentence Complexity -->
+                <label for="sentence complexity">Sentence Complexity:</label><br>
+                <input type="range" id="sentence complexity" min="1" max="10" value="0" oninput="updateComplexityVal()">
+                <span id="complexity val">(1-10)</span><br>
+                <script>
+                function updateComplexityVal() {
+                    const slider = document.getElementById("sentence complexity");
+                    const complexityVal = document.getElementById("complexity val");
+                    slider.addEventListener("input", function() {
+                        complexityVal.textContent = slider.value;
+                    });
+                }
+                </script>
+            <!-- Submit -->
+                <div class="button-container">
+                    <button onclick="validateSubmission()">Start Chatting</button>
+                    <button onclick="window.location.href='/'">Go Home</button>
+                    <button onclick="window.location.href='/prebuilt'">Select Pre-Built Bots</button>
+                    <script src="{{ url_for('static', filename='js/submissionhelper.js') }}"></script>
+                </div>
+    </div>
+</body>
+</html>

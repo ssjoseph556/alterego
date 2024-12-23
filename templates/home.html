@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alter Egos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>Alter Egos</h1>
+    <h2>Create. Customize. Converse.</h2>
+    <img src="{{ url_for('static', filename='images/logo.webp') }}" alt="Alter Ego Logo" class="logo">
+    <!-- Buttons Section -->
+    <div class="button-container">
+        <button onclick="window.location.href='/customize'">Build a Chatbot</button>
+        <button onclick="window.location.href='/prebuilt'">Pre-Built Chatbots</button>
+    </div>
+
+</body>
+</html>
