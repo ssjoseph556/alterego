@@ -2,10 +2,11 @@
 
 ## Overview
 **Alter Egos** is an AI-powered chatbot platform that allows users to create and interact with highly personalized digital personas. With extensive customization options, you can shape your chatbot’s identity, personality, and communication style to create your perfect virtual companion.
-- www.google.com
+
+www.google.com
 
 ## Features
-- **Chatbot Customization**:
+- **Persona Customization**:
   - Set the chatbot's name, age, gender, and background story.
   - Adjust personality traits like mood, humor, energy, and empathy.
   - Fine-tune communication styles, such as tone, sentence complexity, and response length.
