@@ -150,10 +150,12 @@
             <!-- Submit -->
                 <div class="button-container">
                     <button onclick="validateSubmission()">Start Chatting</button>
-                    <button onclick="window.location.href='/'">Go Home</button>
-                    <button onclick="window.location.href='/prebuilt'">Select Pre-Built Bots</button>
                     <script src="{{ url_for('static', filename='js/submission_script.js') }}"></script>
                 </div>
+    </div>
+    <div class="button-container">
+        <button onclick="window.location.href='/'">Go Home</button>
+        <button onclick="window.location.href='/prebuilt'">Select Pre-Built Bots</button>
     </div>
 </body>
 </html>

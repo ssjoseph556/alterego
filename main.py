@@ -17,7 +17,8 @@ customizations = {
 
 # List of dictionaries containing full chat history
 chat_log = [
-    {'role': 'system', 'content': "You are a personalized chatbot. The user will customize you with various attributes which you must take into account and render your responses properly. These attributes will affect your identity, personality, and communication. The following are the user's customizations for you. Take these into account when chatting with the user."}
+    {'role': 'system',
+     'content': "You are a personalized chatbot. The user will customize you with various attributes which you must take into account and render your responses properly. These attributes will affect your identity, personality, and communication. The following are the user's customizations for you. Take these into account when chatting with the user."}
 ]
 
 
@@ -48,8 +49,13 @@ def render_prebuilt():
 # Sends customizations data to javascript backend when requested
 @app.route('/get_customizations', methods=['GET'])
 def get_customizations():
-    print(jsonify({"choices": customizations}))
     return jsonify({"choices": customizations})
+
+
+@app.after_request
+def add_headers(response):
+    response.headers['Cache-Control'] = 'no-store'
+    return response
 
 
 # Updates the customizations dictionary
@@ -81,6 +87,7 @@ def set_customizations():
 
     return jsonify({"message": "Data received successfully!"}), 200
 
+
 @app.route('/prebuilt', methods=['POST'])
 def customize_prebuilt():
     with open("data/persona_presets.json", "r") as file:
@@ -111,16 +118,28 @@ def customize_prebuilt():
     customize_chat_bot()
     return jsonify({"message": "Data received successfully!"}), 200
 
+
 # Will take a dictionary of customizations and apply them to the chat log with system roles
 def customize_chat_bot():
     chat_log.append({
-        'role': 'system', 'content': "The user set your name to be " + customizations['name'] + ". The user set your age to be " + str(customizations['age']) + ". The user set your gender to be " + customizations['gender'] + ". The user provided the following background story for you: " + customizations['background story'] + ". The user also provided the following purpose statement for you: " + customizations['purpose'] + ". Take all this information into account when chatting with the user."
+        'role': 'system',
+        'content': "The user set your name to be " + customizations['name'] + ". The user set your age to be " + str(
+            customizations['age']) + ". The user set your gender to be " + customizations[
+                       'gender'] + ". The user provided the following background story for you: " + customizations[
+                       'background story'] + ". The user also provided the following purpose statement for you: " +
+                   customizations['purpose'] + ". Take all this information into account when chatting with the user."
     })
     chat_log.append({
-        'role': 'system', 'content': mood_info(customizations['mood']) + mood_var_info(customizations['mood'], customizations['mood variability']) + imagination_info(customizations['imagination']) + humor_info(customizations['humor']) + energy_info(customizations['energy']) + empathy_info(customizations['empathy'])
+        'role': 'system', 'content': mood_info(customizations['mood']) + mood_var_info(customizations['mood'],
+                                                                                       customizations[
+                                                                                           'mood variability']) + imagination_info(
+            customizations['imagination']) + humor_info(customizations['humor']) + energy_info(
+            customizations['energy']) + empathy_info(customizations['empathy'])
     })
     chat_log.append({
-        'role': 'system', 'content': tone_info(customizations['tone']) + sensitive_topics_info(customizations['sensitive topics']) + profanity_info(customizations['profanity']) + response_length_info(customizations['response length']) + sentence_complexity_info(customizations['sentence complexity'])
+        'role': 'system', 'content': tone_info(customizations['tone']) + sensitive_topics_info(
+            customizations['sensitive topics']) + profanity_info(customizations['profanity']) + response_length_info(
+            customizations['response length']) + sentence_complexity_info(customizations['sentence complexity'])
     })
 
 
@@ -205,7 +224,7 @@ def imagination_info(imagination):
         case 3:
             return starting + "you occasionally use light creativity, adding small imaginative details while keeping responses primarily grounded in truth and practicality." + ending
         case 4:
-            return starting  + "you allow minor creative input, such as hypothetical what-ifs or subtle storytelling, but you ensure all ideas remain realistic and plausible." + ending
+            return starting + "you allow minor creative input, such as hypothetical what-ifs or subtle storytelling, but you ensure all ideas remain realistic and plausible." + ending
         case 5:
             return starting + "you strike a balance between reality and imagination. While you focus on realistic responses, you can explore imaginative scenarios when appropriate." + ending
         case 6:
@@ -390,4 +409,3 @@ def sentence_complexity_info(complexity):
 if __name__ == "__main__":
     while True:
         app.run(debug=True, port=5001)
-
